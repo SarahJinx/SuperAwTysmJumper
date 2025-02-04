@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            allSounds = new List<AudioSource>();
         }
         else
         {
@@ -24,7 +25,6 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allSounds = new List<AudioSource>();
     }
 
     public AudioSource PlayAudio(AudioClip clip, string gameObjectName, bool isLoop = false, float volume = 1.0f)

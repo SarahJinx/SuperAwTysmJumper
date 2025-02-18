@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyGoomba : MonoBehaviour
 {
     public Transform player;
     public float speed = 2f;
+    public int score = 1;
 
     public LayerMask PlayerLayer;
     public Transform PlayerCheck;
@@ -35,6 +37,7 @@ public class EnemyGoomba : MonoBehaviour
         if (CheckOnSide())
         {
             Destroy(player.gameObject);
+            GameManager.instance.GameOver();
         }
         
         if (CheckOnTop())

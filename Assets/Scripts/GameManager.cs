@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum InterfaceVariable { TIME, SCORE, LIVES }
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -25,6 +27,21 @@ public class GameManager : MonoBehaviour
         }
 
         timeLeft = initialTime;
+
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
+        if (sceneName == "MainMenu")
+        {
+            timeLeft = 0;
+        }
+
+        else if (sceneName == "Game")
+        {
+            timeLeft = initialTime;
+        }
     }
 
     private void Update()
@@ -40,10 +57,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public float GetTime()
+    {
+        return timeLeft;
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
     public void AddScore(int points)
     {
         score += points;
         Debug.Log("Puntuación: " + score);
+    }
+
+    public int GetLives()
+    {
+        return lives;
     }
 
     public void LoseLife()

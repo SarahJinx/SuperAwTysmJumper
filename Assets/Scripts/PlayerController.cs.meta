@@ -3,7 +3,9 @@ guid: de622409f06fcbf41aa3ad94fbcda8f2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundCheck: {instanceID: 0}
+  - jumpingClip: {fileID: 8300000, guid: 41c28027bd7027e4a9973a96f98cf98d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

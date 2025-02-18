@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     private List<AudioSource> allSounds;
-
+    public float volume = 0.3f;
 
     public void Awake()
     {
@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
     {
     }
 
-    public AudioSource PlayAudio(AudioClip clip, string gameObjectName, bool isLoop = false, float volume = 1.0f)
+    public AudioSource PlayAudio(AudioClip clip, string gameObjectName, bool isLoop = false, float volume = 0.5f)
     {
         GameObject nObject = new GameObject();
         nObject.name = gameObjectName;
